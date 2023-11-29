@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "dgSpecHash": "R2l2bsn/5zkUFF1KHEYsaUSbstOCHr6sKkUjAEEDPijkPorFBBnU39eFRBMjQ5qN/gfx2o2qSr9ePhRWpV8yXQ==",
+  "success": true,
+  "projectFilePath": "/Users/ebrududak/Downloads/ConfigurationsCase/Services/ServiceA/Application/Application.csproj",
+  "expectedPackageFiles": [
+    "/Users/ebrududak/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
+    "/Users/ebrududak/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/7.0.0/automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
+    "/Users/ebrududak/.nuget/packages/fluentvalidation/9.5.1/fluentvalidation.9.5.1.nupkg.sha512",
+    "/Users/ebrududak/.nuget/packages/fluentvalidation.dependencyinjectionextensions/9.5.1/fluentvalidation.dependencyinjectionextensions.9.5.1.nupkg.sha512",
+    "/Users/ebrududak/.nuget/packages/mediatr/9.0.0/mediatr.9.0.0.nupkg.sha512",
+    "/Users/ebrududak/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/9.0.0/mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
+    "/Users/ebrududak/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
+    "/Users/ebrududak/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/2.1.0/microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
+    "/Users/ebrududak/.nuget/packages/microsoft.extensions.logging.abstractions/5.0.0/microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "/Users/ebrududak/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Application depends on AutoMapper.Extensions.Microsoft.DependencyInjection (>= 6.8.1) but AutoMapper.Extensions.Microsoft.DependencyInjection 6.8.1 was not found. An approximate best match of AutoMapper.Extensions.Microsoft.DependencyInjection 7.0.0 was resolved.",
+      "libraryId": "AutoMapper.Extensions.Microsoft.DependencyInjection",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}

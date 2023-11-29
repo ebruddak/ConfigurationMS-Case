@@ -1,0 +1,12 @@
+/Users/ebrududak/Downloads/phonebookmicroservices-Master/Shared/PhoneBook.Shared/bin/Debug/net5.0/PhoneBook.Shared.deps.json
+/Users/ebrududak/Downloads/phonebookmicroservices-Master/Shared/PhoneBook.Shared/bin/Debug/net5.0/PhoneBook.Shared.dll
+/Users/ebrududak/Downloads/phonebookmicroservices-Master/Shared/PhoneBook.Shared/bin/Debug/net5.0/PhoneBook.Shared.pdb
+/Users/ebrududak/Downloads/phonebookmicroservices-Master/Shared/PhoneBook.Shared/obj/Debug/net5.0/PhoneBook.Shared.csproj.AssemblyReference.cache
+/Users/ebrududak/Downloads/phonebookmicroservices-Master/Shared/PhoneBook.Shared/obj/Debug/net5.0/PhoneBook.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ebrududak/Downloads/phonebookmicroservices-Master/Shared/PhoneBook.Shared/obj/Debug/net5.0/PhoneBook.Shared.AssemblyInfoInputs.cache
+/Users/ebrududak/Downloads/phonebookmicroservices-Master/Shared/PhoneBook.Shared/obj/Debug/net5.0/PhoneBook.Shared.AssemblyInfo.cs
+/Users/ebrududak/Downloads/phonebookmicroservices-Master/Shared/PhoneBook.Shared/obj/Debug/net5.0/PhoneBook.Shared.csproj.CoreCompileInputs.cache
+/Users/ebrududak/Downloads/phonebookmicroservices-Master/Shared/PhoneBook.Shared/obj/Debug/net5.0/PhoneBook.Shared.dll
+/Users/ebrududak/Downloads/phonebookmicroservices-Master/Shared/PhoneBook.Shared/obj/Debug/net5.0/refint/PhoneBook.Shared.dll
+/Users/ebrududak/Downloads/phonebookmicroservices-Master/Shared/PhoneBook.Shared/obj/Debug/net5.0/PhoneBook.Shared.pdb
+/Users/ebrududak/Downloads/phonebookmicroservices-Master/Shared/PhoneBook.Shared/obj/Debug/net5.0/ref/PhoneBook.Shared.dll

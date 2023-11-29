@@ -1,0 +1,7 @@
+/Users/ebrududak/Downloads/ConfigurationsCase/Services/ServiceA/obj/Debug/net5.0/ServiceA.csproj.AssemblyReference.cache
+/Users/ebrududak/Downloads/ConfigurationsCase/Services/ServiceA/obj/Debug/net5.0/ServiceA.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ebrududak/Downloads/ConfigurationsCase/Services/ServiceA/obj/Debug/net5.0/ServiceA.AssemblyInfoInputs.cache
+/Users/ebrududak/Downloads/ConfigurationsCase/Services/ServiceA/obj/Debug/net5.0/ServiceA.AssemblyInfo.cs
+/Users/ebrududak/Downloads/ConfigurationsCase/Services/ServiceA/obj/Debug/net5.0/ServiceA.csproj.CoreCompileInputs.cache
+/Users/ebrududak/Downloads/ConfigurationsCase/Services/ServiceA/obj/Debug/net5.0/ServiceA.MvcApplicationPartsAssemblyInfo.cs
+/Users/ebrududak/Downloads/ConfigurationsCase/Services/ServiceA/obj/Debug/net5.0/ServiceA.MvcApplicationPartsAssemblyInfo.cache

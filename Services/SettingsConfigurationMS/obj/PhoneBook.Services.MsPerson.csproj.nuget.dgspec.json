@@ -1,0 +1,82 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/ebrududak/Downloads/phonebookmicroservices-Master/Services/SettingsConfigurationMS/PhoneBook.Services.MsPerson.csproj": {}
+  },
+  "projects": {
+    "/Users/ebrududak/Downloads/phonebookmicroservices-Master/Services/SettingsConfigurationMS/PhoneBook.Services.MsPerson.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ebrududak/Downloads/phonebookmicroservices-Master/Services/SettingsConfigurationMS/PhoneBook.Services.MsPerson.csproj",
+        "projectName": "PhoneBook.Services.MsPerson",
+        "projectPath": "/Users/ebrududak/Downloads/phonebookmicroservices-Master/Services/SettingsConfigurationMS/PhoneBook.Services.MsPerson.csproj",
+        "packagesPath": "/Users/ebrududak/.nuget/packages/",
+        "outputPath": "/Users/ebrududak/Downloads/phonebookmicroservices-Master/Services/SettingsConfigurationMS/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ebrududak/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.14.1, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.14.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.411/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
