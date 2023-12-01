@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 using EventBus;
 using EventBus.Producer;
 using RabbitMQ.Client;
-
+using Hubs;
 
 namespace SettingsConfigurationMS
 {
@@ -32,7 +32,7 @@ namespace SettingsConfigurationMS
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddScoped<ISettingsConfigurationService,SettingsConfigurationService>();
+            services.AddScoped<ISettingsConfigurationService, SettingsConfigurationService>();
 
             services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
@@ -47,7 +47,7 @@ namespace SettingsConfigurationMS
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ConfigurationsCase Ebru Dudak", Version = "v1" });
             });
 
-               #region EventBus
+            #region EventBus
 
             services.AddSingleton<IRabbitMQPersistentConnection>(sp =>
             {
@@ -81,6 +81,15 @@ namespace SettingsConfigurationMS
 
             #endregion
 
+            services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
+                       {
+                           builder.AllowAnyOrigin()
+                                   .AllowAnyMethod()
+                                   .AllowAnyHeader()
+                                   .AllowCredentials()
+                                   .WithOrigins("https://localhost:44398");
+                       }));
+            services.AddSignalR();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -105,6 +114,7 @@ namespace SettingsConfigurationMS
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapHub<ConfigurationHub>("/configurationhub");
                 endpoints.MapControllers();
             });
         }

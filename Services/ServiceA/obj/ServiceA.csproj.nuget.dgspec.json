@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ebrududak/Downloads/ConfigurationsCase/Services/ServiceA/ServiceA.csproj": {}
+    "/Users/ebrududak/Desktop/Ebru/ConfigurationMS-Case/Services/ServiceA/ServiceA.csproj": {}
   },
   "projects": {
-    "/Users/ebrududak/Downloads/ConfigurationsCase/EventBus/EventBus.csproj": {
+    "/Users/ebrududak/Desktop/Ebru/ConfigurationMS-Case/EventBus/EventBus.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ebrududak/Downloads/ConfigurationsCase/EventBus/EventBus.csproj",
+        "projectUniqueName": "/Users/ebrududak/Desktop/Ebru/ConfigurationMS-Case/EventBus/EventBus.csproj",
         "projectName": "EventBus",
-        "projectPath": "/Users/ebrududak/Downloads/ConfigurationsCase/EventBus/EventBus.csproj",
+        "projectPath": "/Users/ebrududak/Desktop/Ebru/ConfigurationMS-Case/EventBus/EventBus.csproj",
         "packagesPath": "/Users/ebrududak/.nuget/packages/",
-        "outputPath": "/Users/ebrududak/Downloads/ConfigurationsCase/EventBus/obj/",
+        "outputPath": "/Users/ebrududak/Desktop/Ebru/ConfigurationMS-Case/EventBus/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ebrududak/.nuget/NuGet/NuGet.Config"
@@ -75,14 +75,14 @@
         }
       }
     },
-    "/Users/ebrududak/Downloads/ConfigurationsCase/Services/ServiceA/ServiceA.csproj": {
+    "/Users/ebrududak/Desktop/Ebru/ConfigurationMS-Case/Services/ServiceA/ServiceA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ebrududak/Downloads/ConfigurationsCase/Services/ServiceA/ServiceA.csproj",
+        "projectUniqueName": "/Users/ebrududak/Desktop/Ebru/ConfigurationMS-Case/Services/ServiceA/ServiceA.csproj",
         "projectName": "ServiceA",
-        "projectPath": "/Users/ebrududak/Downloads/ConfigurationsCase/Services/ServiceA/ServiceA.csproj",
+        "projectPath": "/Users/ebrududak/Desktop/Ebru/ConfigurationMS-Case/Services/ServiceA/ServiceA.csproj",
         "packagesPath": "/Users/ebrududak/.nuget/packages/",
-        "outputPath": "/Users/ebrududak/Downloads/ConfigurationsCase/Services/ServiceA/obj/",
+        "outputPath": "/Users/ebrududak/Desktop/Ebru/ConfigurationMS-Case/Services/ServiceA/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ebrududak/.nuget/NuGet/NuGet.Config"
@@ -97,8 +97,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/ebrududak/Downloads/ConfigurationsCase/EventBus/EventBus.csproj": {
-                "projectPath": "/Users/ebrududak/Downloads/ConfigurationsCase/EventBus/EventBus.csproj"
+              "/Users/ebrududak/Desktop/Ebru/ConfigurationMS-Case/EventBus/EventBus.csproj": {
+                "projectPath": "/Users/ebrududak/Desktop/Ebru/ConfigurationMS-Case/EventBus/EventBus.csproj"
               }
             }
           }
@@ -136,6 +136,10 @@
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Client": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
