@@ -20,7 +20,7 @@ namespace Controllers
     public class SettingsConfigurationsController : CustomBaseController
     {
         private readonly ISettingsConfigurationService _settingsConfigurationService;
-      
+
         private readonly EventBusRabbitMQProducer _eventBus;
 
         private readonly IMapper _mapper;
@@ -43,7 +43,7 @@ namespace Controllers
             return CreateActionResultInstance(settingsConfigurationDto);
         }
 
-        
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(string id)
         {
@@ -78,6 +78,14 @@ namespace Controllers
             var response = await _settingsConfigurationService.DeleteAsync(id);
 
             return CreateActionResultInstance(response);
+        }
+
+        [HttpGet("{key}")]
+        public async Task<T> GetValue(string key)
+        {
+            var response = await _settingsConfigurationService.GetValue(id);
+
+            return response;
         }
     }
 }

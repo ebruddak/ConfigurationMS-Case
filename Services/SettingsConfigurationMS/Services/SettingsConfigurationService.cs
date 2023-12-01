@@ -12,7 +12,7 @@ using SettingsConfigurationMS.Services;
 
 namespace SettingsConfigurationMS.Services
 {
-    public class SettingsConfigurationService:ISettingsConfigurationService
+    public class SettingsConfigurationService : ISettingsConfigurationService
     {
         private readonly IMongoCollection<SettingsConfiguration> _confCollection;
         private readonly IMapper _mapper;
@@ -63,6 +63,27 @@ namespace SettingsConfigurationMS.Services
             {
                 return Response<NoContent>.Fail("ContactInfo not found", 404);
             }
+        }
+
+        public async Task<T> GetValue<T>(string key)
+        {
+            var setting = await _confCollection
+                .FirstOrDefaultAsync(s => s.Name == key && s.IsActive);
+
+            switch (Type.GetTypeCode(typeof(T)))
+            {
+                case TypeCode.Boolean:
+                    if (bool.TryParse(setting.Value, out bool boolValue))
+                    {
+                        return (T)Convert.ChangeType(boolValue, typeof(T));
+                    }
+                    break;
+
+                case TypeCode.String:
+                    return (T)Convert.ChangeType(setting.Value, typeof(T));
+            }
+
+            return default(T);
         }
     }
 }
