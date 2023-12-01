@@ -31,6 +31,16 @@ namespace ServiceA
             try
             {
                 await hubConnection.StartAsync();
+
+                while (true)
+                {
+                    await hubConnection.SendAsync("IslemYap");
+
+                    Console.WriteLine("SignalR isteği gönderildi.");
+
+                    await Task.Delay(TimeSpan.FromMinutes(15));
+                }
+
                 Console.WriteLine("SignalR istemci başlatıldı. Mesaj bekleniyor...");
 
                 var response = await hubConnection.InvokeAsync<string>("UpdateSetting");
@@ -50,13 +60,14 @@ namespace ServiceA
                     var eventBusConsumer = serviceProvider.GetService<EventBusConfigurationCreateConsumer>();
 
                 }
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"SignalR istemci başlatılırken hata oluştu: {ex.Message}");
             }
 
-            await hubConnection.StopAsync();
+
         }
 
 
