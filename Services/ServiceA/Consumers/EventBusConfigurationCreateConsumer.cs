@@ -40,8 +40,18 @@ namespace ServiceA.Consumers
             channel.QueueDeclare(queue: EventBusConstants.ConfigurationCreateQueue, durable: false, exclusive: false, autoDelete: false, arguments: null);
 
             var consumer = new EventingBasicConsumer(channel);
+            Console.WriteLine("ebruuu");
+
 
             consumer.Received += ReceivedEvent;
+
+            consumer.Received += (ReceivedEvent, ea) =>
+           {
+
+               channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
+
+           };
+
 
             channel.BasicConsume(queue: EventBusConstants.ConfigurationCreateQueue, autoAck: true, consumer: consumer);
         }
@@ -51,11 +61,13 @@ namespace ServiceA.Consumers
             var message = Encoding.UTF8.GetString(e.Body.Span);
             var @event = JsonConvert.DeserializeObject<ConfigurationCreateEvent>(message);
 
-            if(e.RoutingKey == EventBusConstants.ConfigurationCreateQueue)
+            Console.WriteLine(message);
+
+            if (e.RoutingKey == EventBusConstants.ConfigurationCreateQueue)
             {
                 var command = _mapper.Map<ConfigurationCreateEvent>(@event);
 
-                var result = await _mediator.Send(command);
+                // var result = await _mediator.Send(command);
             }
         }
 

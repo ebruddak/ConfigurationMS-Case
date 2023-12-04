@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "L9BwqsSNyaB6J8d35ebgxNNCPwj5d5sNAW9PtPBb9xJ5j49GuRFcweNOwSS97IbeqsrxKhjw3X8/JGq3zzhqlQ==",
+  "dgSpecHash": "Bu1BEpop23kySBt8VeyRd5Miu1tmkObQxLxKtCCf1vA5LJg1TBCwhjPelk4YKRjAmAQTXETkEjJ8Gg/M3IM8bg==",
   "success": true,
   "projectFilePath": "/Users/ebrududak/Desktop/Ebru/ConfigurationMS-Case/EventBus/EventBus.csproj",
   "expectedPackageFiles": [
+    "/Users/ebrududak/.nuget/packages/mediatr/9.0.0/mediatr.9.0.0.nupkg.sha512",
     "/Users/ebrududak/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "/Users/ebrududak/.nuget/packages/microsoft.bcl.timeprovider/8.0.0/microsoft.bcl.timeprovider.8.0.0.nupkg.sha512",
     "/Users/ebrududak/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",

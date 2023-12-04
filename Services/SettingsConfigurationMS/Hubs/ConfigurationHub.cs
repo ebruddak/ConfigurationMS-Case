@@ -6,12 +6,12 @@ using SettingsConfigurationMS.Hubs;
 
 namespace SettingsConfigurationMS.Hubs
 {
-    public class ConfigurationHub :Hub <IHubClient>
+    public class ConfigurationHub : Hub<IHubClient>
     {
-     
-        public async Task UpdateSetting(string settings )
+
+        public async Task UpdateSetting(string settings)
         {
-            await SendAsync("UpdateSetting" );
+            // Console.WriteLine(settings);
         }
     }
 }

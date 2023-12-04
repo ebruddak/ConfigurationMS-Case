@@ -37,10 +37,11 @@ namespace ServiceA
 
             services.AddInfrastructure(Configuration);
             services.AddApplication();
-         
-             #region EventBus
 
-            services.AddSingleton<IRabbitMQPersistentConnection>(sp => {
+            #region EventBus
+
+            services.AddSingleton<IRabbitMQPersistentConnection>(sp =>
+            {
                 var logger = sp.GetRequiredService<ILogger<DefaultRabbitMQPersistentConnection>>();
 
                 var factory = new ConnectionFactory()
@@ -68,6 +69,7 @@ namespace ServiceA
             });
 
             services.AddSingleton<EventBusConfigurationCreateConsumer>();
+
 
             #endregion
 

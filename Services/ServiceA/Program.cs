@@ -7,69 +7,35 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.SignalR.Client;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using ServiceA.Consumers;
 
 namespace ServiceA
 {
+
     public class Program
     {
 
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
 
-            Connect().Wait();
-            var hubConnection = new HubConnectionBuilder()
-                 .WithUrl("http://localhost:44398/configurationhub")
-                 .Build();
-
-            hubConnection.On<string>("ReceiveMessage", (message) =>
+            using (var scope = host.Services.CreateScope())
             {
+                var serviceProvider = scope.ServiceProvider;
 
-                Console.WriteLine($"SignalR istemciden gelen mesaj: {message}");
-            });
 
-            try
-            {
-                await hubConnection.StartAsync();
 
-                while (true)
-                {
-                    await hubConnection.SendAsync("IslemYap");
+                var Listener = serviceProvider.GetService(typeof(EventBusConfigurationCreateConsumer)) as EventBusConfigurationCreateConsumer;
+                var life = serviceProvider.GetService(typeof(IHostApplicationLifetime)) as IHostApplicationLifetime;
 
-                    Console.WriteLine("SignalR isteği gönderildi.");
-
-                    await Task.Delay(TimeSpan.FromMinutes(15));
-                }
-
-                Console.WriteLine("SignalR istemci başlatıldı. Mesaj bekleniyor...");
-
-                var response = await hubConnection.InvokeAsync<string>("UpdateSetting");
-
-                Console.WriteLine($"Hub metodu çağrıldı, cevap: {response}");
-
-                if (string.IsNullOrEmpty(response))
-                {
-                    Console.WriteLine("Mesaj bulunamadı");
-                }
-                else
-                {
-                    var serviceProvider = new ServiceCollection()
-           .AddSingleton<EventBusConfigurationCreateConsumer>()
-           .BuildServiceProvider();
-
-                    var eventBusConsumer = serviceProvider.GetService<EventBusConfigurationCreateConsumer>();
-
-                }
+                Listener.Consume();
 
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"SignalR istemci başlatılırken hata oluştu: {ex.Message}");
-            }
 
-
+            host.Run();
         }
-
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)

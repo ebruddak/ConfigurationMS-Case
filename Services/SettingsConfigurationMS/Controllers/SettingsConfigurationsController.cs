@@ -12,7 +12,7 @@ using EventBus.Events;
 using EventBus.Producer;
 using EventBus.Core;
 using AutoMapper;
-
+using System.Collections.Generic;
 namespace Controllers
 {
     [Route("api/[controller]")]
@@ -81,11 +81,13 @@ namespace Controllers
         }
 
         [HttpGet("{key}")]
-        public async Task<T> GetValue(string key)
+        public async Task<T> GetValue<T>(string key)
         {
-            var response = await _settingsConfigurationService.GetValue(id);
+            var response = await _settingsConfigurationService.GetValue<T>(key);
 
             return response;
         }
+
+
     }
 }

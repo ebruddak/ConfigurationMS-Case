@@ -16,6 +16,6 @@ namespace SettingsConfigurationMS.Services
 
         Task<Response<SettingsConfigurationDto>> GetByIdAsync(string id);
         Task<Response<NoContent>> DeleteAsync(string id);
-
+        Task<T> GetValue<T>(string key);
     }
 }

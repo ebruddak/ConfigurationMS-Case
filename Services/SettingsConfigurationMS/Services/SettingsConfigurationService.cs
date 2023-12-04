@@ -67,8 +67,8 @@ namespace SettingsConfigurationMS.Services
 
         public async Task<T> GetValue<T>(string key)
         {
-            var setting = await _confCollection
-                .FirstOrDefaultAsync(s => s.Name == key && s.IsActive);
+            var setting = await _confCollection.Find<SettingsConfiguration>(x => x.Name == key).FirstOrDefaultAsync();
+
 
             switch (Type.GetTypeCode(typeof(T)))
             {

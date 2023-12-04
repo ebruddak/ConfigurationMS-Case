@@ -8,7 +8,7 @@ namespace SettingsConfigurationMS.Hubs
 {
     public class IHubClient
     {
-        Task InformClient(string message);
+
 
     }
 }

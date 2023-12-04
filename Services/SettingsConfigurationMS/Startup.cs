@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 using EventBus;
 using EventBus.Producer;
 using RabbitMQ.Client;
-using Hubs;
+using SettingsConfigurationMS.Hubs;
 
 namespace SettingsConfigurationMS
 {
