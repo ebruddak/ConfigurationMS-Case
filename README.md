@@ -19,13 +19,21 @@ SettingConfigurationMS mikroserviste MongoDb kullanılmıştır. ServiceA için 
 
  ## RabbirmQ- EventBus ile microserviceler arası iletişim
 
+SettingCobfigurationMs içerisinde rabbitmq!ye event publish edecek bir metod kurulmuştur. Örnek olarak ConfigurationCreateEvent oluşturulmuş ve yeni bir setting eklendiğinde kuyruğa gçnderilecek şekilde ayarlanmıştır. Bu kuyruk ise ServiceA tarafından dinlenmiştir. 
 
- ![ScreenShot](https://i.ibb.co/RzGwx5w/images.png)<br/>
+ ![ScreenShot](https://i.ibb.co/LdZT6NJ/rabbitmq-implementation.png)<br/>
+   ![ScreenShot](https://i.ibb.co/zQZLqbv/Screen-Shot-2023-11-29-at-13-36-37.png)<br/>
  ![ScreenShot](https://i.ibb.co/CV8kD3P/Screen-Shot-2023-12-02-at-13-44-31.png)<br/>
+
+   ![ScreenShot](https://i.ibb.co/ZX54G5k/24242.png)<br/>
 
 ## SignalR ile gerçek zamanlı haberleşme
 
+İki mikroservice arasındaki sürekli iletişimi ve data consistancyi sağlamak için signalR yapısı kurulmuştur. SettingConfigurationMS'e signalR produces olarak eklenmiştir. ServiceA ise 15 dakika aralıklarla signalR'a bağlanarak yeni bir işlem yapılığ yapılmadığını kontrol etmektedir. 
 
+ ![ScreenShot](https://i.ibb.co/6ZjNzG5/1-q5-WGt-Tp6k-C5p-Df-PJsx-U0-RA.webp))<br/>
+ 
+ ![ScreenShot](https://i.ibb.co/Z2H43VH/Screen-Shot-2023-12-02-at-13-45-00.png))<br/>
 ## Kullanılan Teknolojiler
 
 .ner core 5.0
@@ -40,8 +48,5 @@ SettingConfigurationMS mikroserviste MongoDb kullanılmıştır. ServiceA için 
 
 Dynamic type dönen endpoint
 
- ![ScreenShot](https://i.ibb.co/5xwfsCb/9999999.png)<br/>
- ![ScreenShot](https://i.ibb.co/hdJJR7w/6666666666.png)<br/>
- ![ScreenShot](https://i.ibb.co/1bbw6bx/96796796.png)<br/>
- ![ScreenShot](https://i.ibb.co/NjDFGt0/7777777.png)<br/>
- ![ScreenShot](https://i.ibb.co/tYpg8B7/74747457.png)<br/>
+ ![ScreenShot](https://i.ibb.co/MCc5LQp/Screen-Shot-2023-11-28-at-20-41-17.png)<br/>
+ ![ScreenShot](https://i.ibb.co/2ZgS6ww/Screen-Shot-2023-12-02-at-13-46-35.png)<br/>
