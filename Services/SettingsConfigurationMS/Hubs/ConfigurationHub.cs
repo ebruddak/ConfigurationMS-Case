@@ -6,12 +6,13 @@ using SettingsConfigurationMS.Hubs;
 
 namespace SettingsConfigurationMS.Hubs
 {
-    public class ConfigurationHub : Hub<IHubClient>
+    public class ConfigurationHub : Hub
     {
 
-        public async Task UpdateSetting(string settings)
+        public async Task SendNotificationToGroup(string groupName, string message)
         {
-            // Console.WriteLine(settings);
+            await Clients.Group(groupName).SendAsync("ReceiveNotification", message);
         }
+
     }
 }

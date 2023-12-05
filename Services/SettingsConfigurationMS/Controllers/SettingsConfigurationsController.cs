@@ -13,6 +13,7 @@ using EventBus.Producer;
 using EventBus.Core;
 using AutoMapper;
 using System.Collections.Generic;
+using SettingsConfigurationMS.Hubs;
 namespace Controllers
 {
     [Route("api/[controller]")]
@@ -23,6 +24,8 @@ namespace Controllers
 
         private readonly EventBusRabbitMQProducer _eventBus;
 
+        private readonly ConfigurationHub _configurationHub;
+
         private readonly IMapper _mapper;
 
 
@@ -31,7 +34,6 @@ namespace Controllers
             _settingsConfigurationService = SettingsConfigurationService;
             _mapper = mapper;
             _eventBus = eventBus;
-
 
         }
 
@@ -75,19 +77,34 @@ namespace Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
+
             var response = await _settingsConfigurationService.DeleteAsync(id);
+            _configurationHub.SendNotificationToGroup("ServiceA", "Konfigrasyon değişti.");
 
             return CreateActionResultInstance(response);
         }
 
-        [HttpGet("{key}")]
-        public async Task<T> GetValue<T>(string key)
+
+
+        [HttpGet("getByValue")]
+        public async Task<IActionResult> GetValue(string key, [FromQuery] string type)
         {
-            var response = await _settingsConfigurationService.GetValue<T>(key);
+            object response;
 
-            return response;
+            switch (type.ToLower())
+            {
+                case "string":
+                    response = await _settingsConfigurationService.GetValue<string>(key);
+                    break;
+                case "boolean":
+                    response = await _settingsConfigurationService.GetValue<bool>(key);
+                    break;
+                default:
+                    return BadRequest("Invalid type");
+            }
+
+            return Ok(response);
         }
-
 
     }
 }

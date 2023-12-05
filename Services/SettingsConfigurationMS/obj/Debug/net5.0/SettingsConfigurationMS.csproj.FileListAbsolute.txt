@@ -174,3 +174,4 @@
 /Users/ebrududak/Desktop/Ebru/ConfigurationMS-Case/Services/SettingsConfigurationMS/obj/Debug/net5.0/SettingsConfigurationMS.pdb
 /Users/ebrududak/Desktop/Ebru/ConfigurationMS-Case/Services/SettingsConfigurationMS/obj/Debug/net5.0/SettingsConfigurationMS.genruntimeconfig.cache
 /Users/ebrududak/Desktop/Ebru/ConfigurationMS-Case/Services/SettingsConfigurationMS/obj/Debug/net5.0/ref/SettingsConfigurationMS.dll
+/Users/ebrududak/Desktop/Ebru/ConfigurationMS-Case/Services/SettingsConfigurationMS/bin/Debug/net5.0/MediatR.dll

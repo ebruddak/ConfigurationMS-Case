@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "1PVgadVQsP6KnGMPNeXq5xITb7QGjFNhT+/CNpgbSSLzIpFNl3R13NJC0mnoLWagCbY2BrzMm00iWbp7ffOzVQ==",
+  "dgSpecHash": "fbUvUsxQ21QLz287YToe92EDtKd3sDzOMorBnM0Jv7bCofV/Rsx4vf18NjP6k9wLLK7HUYe6Vj8ewEy9KArj8A==",
   "success": true,
   "projectFilePath": "/Users/ebrududak/Desktop/Ebru/ConfigurationMS-Case/Services/SettingsConfigurationMS/SettingsConfigurationMS.csproj",
   "expectedPackageFiles": [
     "/Users/ebrududak/.nuget/packages/automapper/11.0.0/automapper.11.0.0.nupkg.sha512",
     "/Users/ebrududak/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/11.0.0/automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "/Users/ebrududak/.nuget/packages/dnsclient/1.4.0/dnsclient.1.4.0.nupkg.sha512",
+    "/Users/ebrududak/.nuget/packages/mediatr/9.0.0/mediatr.9.0.0.nupkg.sha512",
     "/Users/ebrududak/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "/Users/ebrududak/.nuget/packages/microsoft.bcl.timeprovider/8.0.0/microsoft.bcl.timeprovider.8.0.0.nupkg.sha512",
     "/Users/ebrududak/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",

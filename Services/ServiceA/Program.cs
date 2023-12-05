@@ -17,7 +17,7 @@ namespace ServiceA
     public class Program
     {
 
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
 
@@ -25,18 +25,68 @@ namespace ServiceA
             {
                 var serviceProvider = scope.ServiceProvider;
 
-
-
                 var Listener = serviceProvider.GetService(typeof(EventBusConfigurationCreateConsumer)) as EventBusConfigurationCreateConsumer;
                 var life = serviceProvider.GetService(typeof(IHostApplicationLifetime)) as IHostApplicationLifetime;
 
                 Listener.Consume();
 
+
+
+
+            }
+
+            Console.WriteLine($"SignalR istemciden gelen mesaj: burda");
+
+            var hubConnection = new HubConnectionBuilder()
+                 .WithUrl("http://localhost:5011/ConfigurationHub")
+                 .Build();
+
+            hubConnection.On<string>("ReceiveMessage", (message) =>
+            {
+
+                Console.WriteLine($"SignalR istemciden gelen mesaj: {message}");
+            });
+
+
+
+            try
+            {
+                await hubConnection.StartAsync();
+
+                while (true)
+                {
+                    await hubConnection.SendAsync("AddToGroup", AppDomain.CurrentDomain.FriendlyName);
+
+                    Console.WriteLine("SignalR istemci başlatıldı. Mesaj bekleniyor...");
+
+
+                    await Task.Delay(TimeSpan.FromMinutes(1));
+                }
+
+                var response = await hubConnection.InvokeAsync<string>("ReceiveNotification");
+
+                Console.WriteLine($"Hub metodu çağrıldı, cevap: {response}");
+
+                if (string.IsNullOrEmpty(response))
+                {
+                    Console.WriteLine("Mesaj bulunamadı");
+                }
+                else
+                {
+                    Console.WriteLine("Mesaj bulundu, configrasyon değişmiş.");
+
+                }
+
+
+            }
+            catch
+            {
+
             }
 
             host.Run();
-        }
 
+        }
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>

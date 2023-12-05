@@ -81,6 +81,7 @@ namespace SettingsConfigurationMS.Services
 
                 case TypeCode.String:
                     return (T)Convert.ChangeType(setting.Value, typeof(T));
+
             }
 
             return default(T);

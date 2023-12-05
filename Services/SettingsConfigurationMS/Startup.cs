@@ -87,7 +87,7 @@ namespace SettingsConfigurationMS
                                    .AllowAnyMethod()
                                    .AllowAnyHeader()
                                    .AllowCredentials()
-                                   .WithOrigins("https://localhost:44398");
+                                   .WithOrigins("http://localhost:5012");
                        }));
             services.AddSignalR();
         }
@@ -114,7 +114,7 @@ namespace SettingsConfigurationMS
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapHub<ConfigurationHub>("/configurationhub");
+                endpoints.MapHub<ConfigurationHub>("/ConfigurationHub");
                 endpoints.MapControllers();
             });
         }

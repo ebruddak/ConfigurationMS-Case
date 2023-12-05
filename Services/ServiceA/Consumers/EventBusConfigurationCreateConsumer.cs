@@ -40,7 +40,6 @@ namespace ServiceA.Consumers
             channel.QueueDeclare(queue: EventBusConstants.ConfigurationCreateQueue, durable: false, exclusive: false, autoDelete: false, arguments: null);
 
             var consumer = new EventingBasicConsumer(channel);
-            Console.WriteLine("ebruuu");
 
 
             consumer.Received += ReceivedEvent;
